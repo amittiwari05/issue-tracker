@@ -1,0 +1,13 @@
+/* AdminDashboard.css
+   Most styles are handled via CSS variables in index.css.
+   Only component-specific overrides live here.
+*/
+
+/* Recharts tooltip override */
+.recharts-tooltip-wrapper { outline: none; }
+
+/* Table scrollbar */
+.admin-table-wrap { overflow-x: auto; }
+.admin-table-wrap::-webkit-scrollbar { height: 5px; }
+.admin-table-wrap::-webkit-scrollbar-track { background: var(--bg-surface); }
+.admin-table-wrap::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }

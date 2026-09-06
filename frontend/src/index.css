@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ================================================================
+   TRACKSEVA — INDIAN AESTHETIC DESIGN SYSTEM
+   Light theme  →  [data-theme="light"]
+   Dark  theme  →  [data-theme="dark"]
+   ================================================================ */
+
+/* ── LIGHT THEME ── */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-base: #FEF6EA;
+  --bg-surface: #FFFAF2;
+  --bg-card: #FFF5E6;
+  --bg-elevated: #FFF0D8;
+  --border-subtle: rgba(168, 80, 0, 0.10);
+  --border-medium: rgba(168, 80, 0, 0.22);
+  --border-strong: rgba(168, 80, 0, 0.45);
+  --text-primary: #1C0A00;
+  --text-secondary: #5C2D0A;
+  --text-muted: #9A6030;
+  --saffron: #C04800;
+  --saffron-lt: #E8650A;
+  --saffron-dim: rgba(200, 72, 0, 0.10);
+  --teal: #005C52;
+  --teal-lt: #007C6E;
+  --teal-dim: rgba(0, 92, 82, 0.10);
+  --crimson: #9C1515;
+  --crimson-lt: #C02020;
+  --crimson-dim: rgba(156, 21, 21, 0.10);
+  --gold: #A07800;
+  --gold-lt: #C49A0A;
+  --gold-dim: rgba(160, 120, 0, 0.10);
+  --green: #0F6030;
+  --green-lt: #1A7A3A;
+  --status-pending: #A07800;
+  --status-working: #C04800;
+  --status-done: #0F6030;
+  --shadow-sm: 0 2px 8px rgba(100, 40, 0, 0.10);
+  --shadow-md: 0 4px 20px rgba(100, 40, 0, 0.14);
+  --shadow-glow-saffron: 0 0 18px rgba(200, 72, 0, 0.20);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Noto Sans', sans-serif;
+}
+
+/* ── DARK THEME ── */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-base: #0F0700;
+  --bg-surface: #1A0E05;
+  --bg-card: #231508;
+  --bg-elevated: #2C1C0C;
+  --border-subtle: rgba(255, 145, 40, 0.12);
+  --border-medium: rgba(255, 145, 40, 0.28);
+  --border-strong: rgba(255, 145, 40, 0.50);
+  --text-primary: #FFF5E8;
+  --text-secondary: #E0A870;
+  --text-muted: #8A6040;
+  --saffron: #E8650A;
+  --saffron-lt: #FF8C2A;
+  --saffron-dim: rgba(232, 101, 10, 0.18);
+  --teal: #007C6E;
+  --teal-lt: #00A896;
+  --teal-dim: rgba(0, 124, 110, 0.18);
+  --crimson: #B52020;
+  --crimson-lt: #E03535;
+  --crimson-dim: rgba(181, 32, 32, 0.18);
+  --gold: #C49A0A;
+  --gold-lt: #E8B800;
+  --gold-dim: rgba(196, 154, 10, 0.18);
+  --green: #1A7A3A;
+  --green-lt: #22A050;
+  --status-pending: #E8B800;
+  --status-working: #FF8C2A;
+  --status-done: #22A050;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.55);
+  --shadow-glow-saffron: 0 0 20px rgba(232, 101, 10, 0.25);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Noto Sans', sans-serif;
+}
+
+/* ── GLOBAL BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Smooth theme transitions — but not on animations */
+* {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.15s ease,
+    box-shadow 0.25s ease;
+}
+
+.animate-row-in,
+.animate-slide-down,
+.bubble-input.clicked::after {
+  transition: none !important;
+}
+
+/* ── TRICOLOR BAR ── */
+.tricolor-bar {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #FF9933 0% 33.33%,
+    #FFFFFF 33.33% 66.66%,
+    #138808 66.66% 100%
+  );
+  flex-shrink: 0;
+}
+
+/* ── RANGOLI LATTICE ── */
+.rangoli-bg {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(232, 101, 10, 0.03) 20px,
+      rgba(232, 101, 10, 0.03) 21px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(232, 101, 10, 0.03) 20px,
+      rgba(232, 101, 10, 0.03) 21px
+    );
+}
+
+/* ── KOLAM DIVIDER ── */
+.kolam-divider {
+  background: repeating-linear-gradient(
+    to right,
+    var(--saffron-lt) 0,
+    var(--saffron-lt) 4px,
+    transparent 4px,
+    transparent 12px
+  );
+  height: 2px;
+  opacity: 0.40;
+}
+
+/* ── THEME TOGGLE SWITCH ── */
+.theme-toggle-track {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border-medium);
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-toggle-track:hover {
+  border-color: var(--saffron-lt);
+}
+
+.theme-toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 1;
+  transition:
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.25s !important;
+}
+
+[data-theme="dark"] .theme-toggle-knob {
+  transform: translateX(22px);
+}
+
+/* ── BUBBLE CLICK ── */
+.bubble-input {
+  position: relative;
+  overflow: hidden;
+}
+
+.bubble-input.clicked::after {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 10px;
+  height: 10px;
+  background: var(--saffron-lt);
+  opacity: 0.4;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: bubble 0.6s ease-out forwards;
+}
+
+@keyframes bubble {
+  to {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
+
+/* ── SLIDE DOWN ── */
+@keyframes slide-down {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease forwards;
+}
+
+/* ── ROW FADE IN ── */
+@keyframes row-in {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-row-in {
+  animation: row-in 0.22s ease backwards;
+}
+
+/* ── SCROLLBAR ── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--saffron);
+  border-radius: 3px;
+}
+
+/* ── STATUS HELPERS ── */
+.status-pending {
+  color: var(--status-pending);
+}
+
+.status-working {
+  color: var(--status-working);
+}
+
+.status-done {
+  color: var(--status-done);
+}
+
+/* ── SELECT OPTION ── */
+select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* ── ADMIN TABLE SCROLL ── */
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table-wrap::-webkit-scrollbar {
+  height: 5px;
+}
+
+.admin-table-wrap::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+.admin-table-wrap::-webkit-scrollbar-thumb {
+  background: var(--saffron);
+  border-radius: 3px;
+}
