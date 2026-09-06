@@ -13,7 +13,7 @@ const app = express();
 // CORS
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://issue-tracker-weld-two.vercel.app"
+  "https://issue-tracker-qy4t.vercel.app"
 ];
 
 app.use(
@@ -68,5 +68,5 @@ if (process.env.NODE_ENV !== "production") {
   });
 }
 
-// Vercel needs the Express app exported
+// Vercel
 module.exports = app;
